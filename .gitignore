@@ -1,0 +1,26 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Virtual Environments ---
+venv/
+.venv/
+env/
+
+# --- IDEs ---
+.idea/
+.vscode/
+*.swp
+
+# --- Sistema Operacional ---
+.DS_Store
+Thumbs.db
+
+# --- Resultados Gerados ---
+**/results/*.json
+**/results/*.csv
+**/results/*.tex
+**/results/*.pdf
+**/results/*.log
+**/results/*.aux
