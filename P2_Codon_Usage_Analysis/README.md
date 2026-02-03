@@ -48,7 +48,7 @@ O projeto segue a arquitetura modular do repositório:
 Execute a partir da raiz do repositório para incluir as dependências compartilhadas.
 
 ```bash
-# 1. Construir a imagem
+# 1. Construir a imagem (a partir da raiz do repositório)
 docker build -t bio-p2 -f P2_Codon_Usage_Analysis/Dockerfile .
 
 # 2. Executar o pipeline (montando volumes para persistir dados)
