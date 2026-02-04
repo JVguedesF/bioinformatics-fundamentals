@@ -20,7 +20,6 @@ from utils.exceptions import BioPipelineError
 
 
 def parse_arguments():
-    """Configura e processa argumentos da linha de comando."""
     parser = argparse.ArgumentParser(description="GeneCodePro v1.0 - Genetic Code Analysis")
     parser.add_argument("--input", "-i", type=Path, help="Diretório de entrada (arquivos FASTA)")
     parser.add_argument("--output", "-o", type=Path, help="Diretório de saída para relatórios")
@@ -61,7 +60,6 @@ def main():
         for fasta_path in files:
             progress.update(task, description=f"Processing {fasta_path.name}")
 
-            # Busca a tabela genética correta dinamicamente a partir do config.py
             dataset_info = next((d for d in settings.DATASETS if d["name"] == fasta_path.name), None)
             table_id = dataset_info.get("table", 1) if dataset_info else 1
 

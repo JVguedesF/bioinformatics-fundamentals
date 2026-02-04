@@ -18,16 +18,12 @@ from config import settings
 from utils.exceptions import BioPipelineError
 
 def parse_arguments():
-    """Configura e processa argumentos da linha de comando."""
     parser = argparse.ArgumentParser(description="BioPipeline v4.0 - Molecular Analysis Pipeline")
     parser.add_argument("--input", "-i", type=Path, help="Diretório de entrada (arquivos FASTA)")
     parser.add_argument("--output", "-o", type=Path, help="Diretório de saída para relatórios")
     return parser.parse_args()
 
 def main():
-    """
-    Main pipeline execution.
-    """
     args = parse_arguments()
     if args.input:
         settings.DATA_DIR = args.input

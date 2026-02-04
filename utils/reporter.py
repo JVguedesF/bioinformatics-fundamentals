@@ -22,22 +22,17 @@ class BioReporter:
         output_dir: Path,
         filename_prefix: str = "report"
     ) -> Path:
-        """Gera um PDF/LaTeX com base em listas de strings genéricas."""
         
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         tex_path = output_dir / f"{filename_prefix}_{timestamp}.tex"
-        
-        # Formata o sumário
+
         summary_text = "\n".join([f"\\item \\textbf{{{k}}}: {v}" for k, v in summary_data.items()])
-        
-        # Formata o cabeçalho da tabela
+
         col_format = "l" * len(headers) # Alinha tudo à esquerda
         header_row = " & ".join([f"\\textbf{{{h}}}" for h in headers])
-        
-        # Formata as linhas
+
         table_content = ""
         for row in rows:
-            # Escapa caracteres especiais do LaTeX (_ e %)
             safe_row = [str(item).replace('_', r'\_').replace('%', r'\%') for item in row]
             table_content += " & ".join(safe_row) + r" \\" + "\n"
 
@@ -89,14 +84,12 @@ class BioReporter:
 
     @staticmethod
     def export_csv(data: List[Dict], output_dir: Path, prefix: str = "data"):
-        """Exporta lista de dicionários para CSV."""
         if not data:
             return None
 
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         csv_path = output_dir / f"{prefix}_{timestamp}.csv"
-        
-        # Assume que todos os dicionários têm as mesmas chaves do primeiro
+
         fieldnames = list(data[0].keys())
         
         with open(csv_path, 'w', newline='', encoding='utf-8') as f:

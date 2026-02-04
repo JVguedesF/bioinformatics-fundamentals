@@ -9,19 +9,17 @@ from utils.exceptions import SequenceAnalysisError, EmptySequenceError
 
 @dataclass
 class ORFResult:
-    """Container for identified Open Reading Frame data."""
     id: str
     frame: int
     strand: int
     length_aa: int
     length_bp: int
     protein_seq: str
-    start_pos: int  # Posição em nucleotídeos (bp)
+    start_pos: int
 
 
 @dataclass
 class CodonMetrics:
-    """Container for Codon Usage statistics."""
     total_codons: int
     gc_content: float
     codon_counts: Dict[str, int]
@@ -40,10 +38,6 @@ class SequenceAnalyzer:
         self.table = CodonTable.unambiguous_dna_by_id[table_id]
 
     def find_orfs(self, min_len_aa: int = 100) -> List[ORFResult]:
-        """
-        Scan sequence for ORFs in all 6 frames.
-        Returns list of ORFResult objects sorted by length.
-        """
         try:
             results = []
 
@@ -55,7 +49,6 @@ class SequenceAnalyzer:
                     current_aa_pos = 0
                     for protein in proteins:
                         if len(protein) >= min_len_aa:
-                            # Converte a posição do aminoácido para a posição do nucleotídeo
                             nt_start_pos = (current_aa_pos * 3) + frame
 
                             results.append(ORFResult(
@@ -67,7 +60,6 @@ class SequenceAnalyzer:
                                 protein_seq=str(protein),
                                 start_pos=nt_start_pos
                             ))
-                        # +1 para compensar o códon de parada (*) removido no split
                         current_aa_pos += len(protein) + 1
 
             return sorted(results, key=lambda x: x.length_aa, reverse=True)
@@ -75,9 +67,6 @@ class SequenceAnalyzer:
             raise SequenceAnalysisError(f"Error finding ORFs: {e}")
 
     def analyze_codon_usage(self) -> CodonMetrics:
-        """
-        Calculate Codon Usage Bias and GC content.
-        """
         try:
             trim = len(self.sequence) // 3 * 3
             coding_seq = self.sequence[:trim]

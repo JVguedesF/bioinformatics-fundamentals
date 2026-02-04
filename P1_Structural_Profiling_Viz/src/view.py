@@ -15,7 +15,6 @@ from config import settings
 console = Console()
 
 class StructuralView:
-    """Gerencia toda a visualização e relatórios do Projeto 1."""
 
     @staticmethod
     def create_visualization(result: AnalysisResult, sequence_preview: str) -> Tuple[Panel, Tree]:

@@ -11,7 +11,6 @@ from utils.reporter import BioReporter
 console = Console()
 
 class CodonView:
-    """Gerencia visualização e relatórios do Projeto 2."""
 
     @staticmethod
     def create_analysis_view(filename: str, record_id: str, length: int, table_id: int,

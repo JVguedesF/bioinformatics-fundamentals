@@ -21,7 +21,6 @@ RNA_BASES = set("AUGCN")
 
 @dataclass
 class AnalysisResult:
-    """Container for sequence analysis results"""
     filename: str
     sequence_id: str
     molecule_type: str
@@ -40,7 +39,6 @@ class AnalysisResult:
             self.timestamp = datetime.now().isoformat()
 
 def calculate_dna_metrics(seq):
-    """Calculates GC content and Melting Temperature."""
     length = len(seq)
     gc = gc_fraction(seq) * 100
     tm = mt.Tm_NN(seq, strict=False)
@@ -51,14 +49,12 @@ def calculate_dna_metrics(seq):
     }
 
 def get_folding_data(sequence_str):
-    """Calculates RNA secondary structure and MFE using ViennaRNA."""
     if HAS_VIENNA_RNA:
         structure, mfe = RNA.fold(sequence_str)
         return structure, mfe
     return None, None
 
 def analyze_protein(sequence_str):
-    """Calculates protein physicochemical properties."""
     clean_seq = sequence_str.rstrip('*')
     if not clean_seq:
         return None
@@ -77,7 +73,6 @@ def analyze_protein(sequence_str):
 class CentralDogmaAnalyzer:
     @staticmethod
     def detect_molecule_type(sequence: str) -> str:
-        """Determine molecule type based on composition."""
         unique_chars = set(sequence.upper()) - set("\n\r\t ")
 
         if len(unique_chars - DNA_BASES - RNA_BASES) > 0:
@@ -89,7 +84,6 @@ class CentralDogmaAnalyzer:
         return 'DNA'
 
     def process_sequence(self, record: SeqRecord, filename: str) -> AnalysisResult:
-        """Executes the biological analysis pipeline."""
         if not record.seq:
             raise EmptySequenceError(f"Sequence in {filename} is empty.")
 

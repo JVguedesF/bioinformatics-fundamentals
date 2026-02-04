@@ -12,7 +12,6 @@ class BioVisualizer:
 
     @staticmethod
     def format_sequence_preview(sequence: str, length: int = 60) -> Text:
-        """Gera ‘preview’ colorido de sequência (DNA/RNA)."""
         text = Text()
         colors = {
             'A': 'green', 'T': 'red', 'U': 'red',
@@ -38,7 +37,6 @@ class BioVisualizer:
         length: int,
         color: str = "white"
     ) -> Panel:
-        """Cria o painel de cabeçalho padrão."""
         content = (
             f"[bold]FILE:[/bold] {filename}\n"
             f"[bold]ID:[/bold]   {seq_id}\n"
@@ -56,11 +54,9 @@ class BioVisualizer:
         title: str,
         branches: List[Tuple[Optional[str], List[Union[str, RenderableType]]]]
     ) -> Tree:
-        """Cria a árvore de resultados padrão."""
         tree = Tree(f"[bold]{title}[/]", guide_style="dim")
         
         for branch_title, items in branches:
-            # Se branch_title for None ou vazio, adiciona itens na raiz
             target = tree.add(branch_title) if branch_title else tree
             for item in items:
                 target.add(item)
