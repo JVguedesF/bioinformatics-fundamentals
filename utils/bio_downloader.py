@@ -8,10 +8,6 @@ console = Console()
 
 
 def download_entrez_data(email: str, datasets: List[Dict], output_dir: Path):
-    """
-    Função genérica para baixar dados do NCBI/Entrez.
-    Recebe as configurações como argumentos, desacoplando do arquivo settings global.
-    """
     if not email:
         console.print("[red]Erro: Email do Entrez não fornecido![/]")
         console.print("[yellow]Verifique seu arquivo .env e as configurações.[/]")

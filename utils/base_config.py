@@ -9,10 +9,6 @@ load_dotenv()
 
 @dataclass
 class BaseAppConfig:
-    """
-    Configuração Base compartilhada por todos os projetos.
-    Define caminhos padrões e carrega variáveis de ambiente.
-    """
     PROJECT_ROOT: Path
 
     FILE_EXTENSIONS: List[str] = field(default_factory=lambda: ["*.fasta", "*.fa"])
