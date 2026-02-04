@@ -40,6 +40,16 @@ Cada projeto funciona como um módulo independente com sua própria documentaç�
 
 ---
 
+## ⚙️ Configuração
+
+Para baixar os dados do NCBI, é necessário informar um e-mail para identificação e controle de tráfego.
+
+1. Crie um arquivo `.env` na **raiz absoluta** do repositório:
+   ```env
+   ENTREZ_EMAIL=seu_email@exemplo.com
+
+---
+
 ## 📦 Instalação Local (Desenvolvimento)
 
 Se preferir rodar sem Docker (via IDE), configure o ambiente virtual na raiz para que todos os projetos compartilhem as dependências base:

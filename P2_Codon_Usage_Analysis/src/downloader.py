@@ -2,15 +2,17 @@ from Bio import Entrez
 from pathlib import Path
 from rich.console import Console
 from config import settings
+import sys
 
-Entrez.email = "student@bioinformatics.com"
+Entrez.email = settings.ENTREZ_EMAIL
 console = Console()
 
 def download_datasets(output_dir: Path):
-    """
-    Downloads required datasets for the project if they don't exist.
-    Targets: Lambda Phage (Virus), E. coli (Bacteria), Human Insulin (Eukaryote).
-    """
+    if not Entrez.email:
+        console.print("[red]Erro: ENTREZ_EMAIL não configurado no arquivo .env![/]")
+        console.print("[yellow]Crie um arquivo .env na raiz do projeto com: ENTREZ_EMAIL=seu@email.com[/]")
+        sys.exit(1)
+
     output_dir.mkdir(parents=True, exist_ok=True)
 
     for data in settings.DATASETS:
@@ -26,5 +28,3 @@ def download_datasets(output_dir: Path):
                 console.print(f"[green]Successfully saved {data['name']}[/]")
             except Exception as e:
                 console.print(f"[red]Failed to download {data['id']}: {e}[/]")
-        else:
-            pass

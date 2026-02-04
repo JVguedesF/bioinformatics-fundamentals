@@ -42,6 +42,15 @@ O projeto segue a arquitetura modular do repositório:
 
 ---
 
+## ⚙️ Configuração
+
+Para baixar os dados do NCBI, é necessário informar um e-mail para identificação e controle de tráfego.
+
+1. Crie um arquivo `.env` na **raiz absoluta** do repositório:
+   ```env
+   ENTREZ_EMAIL=seu_email@exemplo.com
+   ```
+---
 ## 📦 Como Rodar
 
 ### Opção A: Via Docker (Recomendado)
