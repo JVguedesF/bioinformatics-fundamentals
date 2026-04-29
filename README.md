@@ -1,48 +1,42 @@
 # Bioinformatics Fundamentals 🧬
 
-![Status](https://img.shields.io/badge/Status-Active_Development-green)
+![Status](https://img.shields.io/badge/Status-Study_Project-blue)
 ![Level](https://img.shields.io/badge/Level-Fundamentals-blue)
 ![Stack](https://img.shields.io/badge/Stack-Python_%7C_Biopython_%7C_Docker-2496ED)
 
-Este repositório contém a **Fase 1** da minha trilha de especialização em Bioinformática. O objetivo central destes projetos é o aprendizado prático e a consolidação de conceitos fundamentais da Biologia Molecular Computacional. Cada módulo foi construído como um exercício de estudo para aplicar teoria em implementações algorítmicas.
+Este repositório reúne meus **primeiros projetos de contato com a Bioinformática**. O objetivo é simples: aprender na prática os conceitos básicos de Biologia Molecular Computacional. Cada módulo é um exercício de estudo — não são ferramentas de produção.
 
 ---
 
 ## 🔬 Visão Geral dos Projetos
 
-Os projetos abaixo exploram diferentes temas da bioinformática, utilizando dados reais e simulações:
-
-* **Protein & RNA Viewer (`protein-rna-viewer`):** Estudo de biofísica e termodinâmica de ácidos nucleicos, incluindo a predição de estruturas secundárias de RNA e visualização 3D de estruturas proteicas.
-* **Codon Bias Analyzer (`codon-bias-analyzer`):** Focado na identificação de ORFs (Open Reading Frames), tradução utilizando tabelas genéticas alternativas e análise estatística de viés de uso de códons (CUB).
-* **Splicing Pattern Analyzer (`splicing-pattern-analyzer`):** Análise da arquitetura gênica em eucariotos, realizando o mapeamento de íntrons e éxons e identificando isoformas geradas por splicing alternativo.
-* **Mobile Elements Detector (`mobile-elements-detector`):** Investigação de genomas organelares e detecção de elementos móveis (como elementos Alu), além da identificação de origens de replicação via GC Skew.
-* **DNA Mutation Simulator (`dna-mutation-simulator`):** Simulação algorítmica de processos de replicação enzimática, modelagem de sistemas de reparo de DNA e análise de assinaturas mutacionais.
+* **Protein & RNA Viewer (`protein-rna-viewer`):** Primeiros passos com biofísica e termodinâmica de ácidos nucleicos, predição de estruturas secundárias de RNA e visualização de estruturas proteicas.
+* **Codon Bias Analyzer (`codon-bias-analyzer`):** Identificação de ORFs, tradução com tabelas genéticas e análise básica de viés de uso de códons (CUB).
+* **Splicing Pattern Analyzer (`splicing-pattern-analyzer`):** Mapeamento simples de íntrons e éxons em genes eucarióticos.
+* **Mobile Elements Detector (`mobile-elements-detector`):** Análise de densidade gênica, GC Skew e detecção de elementos móveis em genomas.
+* **DNA Mutation Simulator (`dna-mutation-simulator`):** Simulação introdutória de replicação, sistemas de reparo e assinaturas mutacionais.
 
 ---
 
 ## 🛠️ Padrões de Engenharia
 
-Mesmo sendo projetos voltados ao aprendizado, todos seguem princípios de desenvolvimento robustos:
+Os projetos seguem alguns princípios básicos de organização:
 
-1.  **Arquitetura MVC:** Divisão clara entre a Lógica Biológica (`Model`), Interface (`View`) e Orquestração (`Controller`).
-2.  **Dockerização:** Cada módulo contém seu próprio ambiente isolado via Docker para garantir reprodutibilidade.
-3.  **Qualidade de Código:** Foco em código modular, tipado e legível (Clean Code).
+1. **Arquitetura MVC:** Separação entre lógica, interface e orquestração.
+2. **Dockerização:** Cada módulo tem seu ambiente isolado para reprodutibilidade.
+3. **Código legível:** Foco em modularidade e tipagem.
 
 ---
 
 ## 🚀 Como Executar
 
-Para manter a organização e a especificidade de cada ferramenta, **cada projeto possui suas próprias instruções de instalação e execução.**
+Cada projeto tem suas próprias instruções. Entre no diretório correspondente e consulte o `README.md` específico.
 
-Para rodar qualquer um dos projetos (seja localmente ou via Docker), entre no diretório correspondente e consulte o arquivo `README.md` específico daquela pasta.
-
-Como diretriz geral:
-* Os comandos devem ser executados a partir da raiz de cada projeto.
-* Projetos que acessam o NCBI exigem um arquivo `.env` com a variável `ENTREZ_EMAIL`.
+Como regra geral:
+* Comandos devem ser executados a partir da raiz de cada projeto.
+* Projetos que acessam o NCBI exigem um `.env` com a variável `ENTREZ_EMAIL`.
 
 ---
 
 > [!NOTE]
-> Este repositório é um portfólio de aprendizado pessoal para exploração acadêmica de conceitos biológicos.
-
-*Desenvolvido com foco em Biologia Molecular Computacional e Engenharia de Software.*
+> Este repositório é um portfólio de aprendizado pessoal. Os projetos foram desenvolvidos como exercícios introdutórios para exploração de conceitos básicos de Bioinformática — não se trata de software de análise científica rigorosa.
