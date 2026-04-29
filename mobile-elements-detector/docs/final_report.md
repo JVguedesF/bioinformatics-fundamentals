@@ -23,7 +23,7 @@ Utilizamos o cálculo de Skew cumulativo para identificar onde a replicação do
 ---
 
 ## 3. Elementos Móveis (Sítios Alu)
-Varremos um fragmento do Cromossomo 19 humano em busca de retrotransposons da família Alu.
+Analisamos um fragmento do Cromossomo 19 humano em busca de retrotransposons da família Alu.
 
 * **Detecção**: O scan via regex identificou 3 ocorrências do consenso Alu no fragmento analisado.
 * **Mapeamento**: O mapa cromossômico gerado demonstrou que os elementos estão concentrados em regiões específicas, evidenciando como essas sequências repetitivas colonizam o DNA nuclear.
