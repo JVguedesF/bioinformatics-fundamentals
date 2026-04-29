@@ -34,17 +34,3 @@ Para compreender na prática como a informação flui do DNA para a Proteína em
 * **Solução Estudada:** O conceito de **Otimização de Códons** (reescrever o gene trocando AGC por um sinônimo bacteriano) é necessário para contornar essa barreira evolutiva.
 
 ---
-
-## 3. Competências Consolidadas
-
-Ao finalizar este projeto, consolidei os seguintes conhecimentos:
-
-### 3.1 Bioinformática (Hard Skills)
-1.  **Manipulação de Tabelas:** Aprendi a programar a seleção dinâmica de tabelas de tradução (NCBI Table 1 vs 11) para evitar erros de predição em procariotos.
-2.  **Algoritmos Genômicos:** Entendi a lógica matemática por trás da busca de ORFs (cálculo de coordenadas relativas vs absolutas).
-
-### 3.2 Biologia Molecular (Conceitos)
-1.  **Universalidade vs. Particularidade:** O código genético é universal na estrutura, mas "dialetal" na preferência de códons (CUB).
-2.  **Eficiência Traducional:** A escolha do códon impacta diretamente a velocidade do ribossomo.
-
----
