@@ -1,6 +1,6 @@
 # Eukaryotic Splicing Dynamics 🧬
 
-![Status](https://img.shields.io/badge/Status-Active_Development-green)
+![Status](https://img.shields.io/badge/Status-Study_Project-blue)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
 ![Stack](https://img.shields.io/badge/Stack-Biopython_%7C_Docker-2496ED)
 
